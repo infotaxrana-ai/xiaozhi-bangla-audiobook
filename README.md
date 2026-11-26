@@ -9,7 +9,7 @@ A lightweight MCP service that lets a Xiaozhi voice assistant discover and play 
 - Search Bengali audiobook, story, podcast and poetry-recitation entries.
 - Return direct audio URLs only for catalog entries marked `verified`.
 - Add and maintain your own catalog in `data/catalog.json`.
-- Expose MCP tools for Xiaozhi: `search_bangla_audio`, `get_audio_item`, and `list_audio_categories`.
+- Expose MCP tools for Xiaozhi: `search_bangla_audio`, `get_audio_item`, `list_audio_categories`, and `get_catalog_status`.
 - Supports HTTP(S) audio URLs and optional feed metadata.
 
 ## Quick start
