@@ -11,12 +11,26 @@ EXAMPLE_PATH = ROOT / "data" / "catalog.example.json"
 mcp = FastMCP("Xiaozhi Bangla Audio Library")
 
 def load_catalog() -> list[dict[str, Any]]:
-    """Load catalog entries. Missing user catalog means an empty catalog."""
-    path = CATALOG_PATH if CATALOG_PATH.exists() else EXAMPLE_PATH
-    if not path.exists(): return []
-    with path.open("r", encoding="utf-8") as handle: data = json.load(handle)
-    if not isinstance(data, list): raise ValueError("Catalog root must be a JSON array")
-    return [item for item in data if isinstance(item, dict)]
+    """Load the hand-curated catalog plus generated Commons imports."""
+    items: list[dict[str, Any]] = []
+    for path in (CATALOG_PATH, ROOT / "data" / "commons-import.json"):
+        if not path.exists():
+            continue
+        with path.open("r", encoding="utf-8") as handle:
+            data = json.load(handle)
+        if not isinstance(data, list):
+            raise ValueError(f"Catalog root must be a JSON array: {path}")
+        items.extend(item for item in data if isinstance(item, dict))
+    if not items and EXAMPLE_PATH.exists():
+        with EXAMPLE_PATH.open("r", encoding="utf-8") as handle:
+            data = json.load(handle)
+        items.extend(item for item in data if isinstance(item, dict))
+    # Prefer curated entries when the same media URL appears in both files.
+    unique: dict[str, dict[str, Any]] = {}
+    for item in items:
+        key = str(item.get("audio_url") or item.get("id") or "")
+        unique[key] = item
+    return list(unique.values())
 
 def playable(item: dict[str, Any]) -> bool:
     url = item.get("audio_url", "")
