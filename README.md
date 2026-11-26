@@ -33,7 +33,7 @@ The pipe script is intentionally not copied here; use the upstream Xiaozhi serve
 
 ## Catalog format
 
-See `data/catalog.example.json`. Each item includes title, author/performer, category, language, audio URL, source URL, rights note and verification status. Only `verified: true` items are exposed as playable results. Do not add scraped, paywalled, pirated or unauthorized recordings.
+See `data/catalog.example.json`. Each item includes title, author/performer, category, language, audio URL, source URL, rights note and verification status. Run `python scripts/import_commons.py` to fetch currently licensed Bengali audiobook entries from Wikimedia Commons into `data/commons-import.json`; review the generated file before merging records into the main catalog. Only `verified: true` items are exposed as playable results. Commons-imported items include the original media URL and license metadata; retain attribution and comply with the license. Do not add scraped, paywalled, pirated or unauthorized recordings.
 
 ## Important Xiaozhi playback note
 
