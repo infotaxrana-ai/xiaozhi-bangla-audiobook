@@ -14,7 +14,7 @@ def load_catalog() -> list[dict[str, Any]]:
     """Load the hand-curated catalog plus generated Commons imports."""
     items: list[dict[str, Any]] = []
     # Load imported records first; the hand-curated catalog takes precedence.
-    for path in (ROOT / "data" / "commons-import.json", CATALOG_PATH):
+    for path in (ROOT / "data" / "commons-import.json", ROOT / "data" / "podcast-import.json", CATALOG_PATH):
         if not path.exists():
             continue
         with path.open("r", encoding="utf-8") as handle:
