@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "description": "Ten source endpoints (six podcast RSS feeds and four Wikimedia Commons categories). RSS enclosure URLs are imported as unverified until the actual media and Xiaozhi playback path are tested.",
+  "sources": [
+    {
+      "id": "roll-sound-goppo",
+      "name": "Roll Sound: Goppo",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://anchor.fm/s/101ce3cd4/podcast/rss",
+      "website_url": "https://www.radioguide.fm/podcast/roll-sound-goppo-bengali-audio-stories",
+      "focus": [
+        "বাংলা গল্প",
+        "গল্পপাঠ"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "golpo-kothar-asor",
+      "name": "গল্প-কথার আসর",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://rss.buzzsprout.com/1194824.rss",
+      "website_url": "https://podcastdex.com/podcast/golpo-kothar-asor-bengali-stories-told-here",
+      "focus": [
+        "বাংলা সাহিত্য",
+        "গল্প",
+        "উপন্যাস"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "upokotha",
+      "name": "Upokotha – Bengali Audio Stories",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://anchor.fm/s/119e31f60/podcast/rss",
+      "website_url": "https://www.radioguide.fm/podcast/upokotha-bengali-audio-stories",
+      "focus": [
+        "রবীন্দ্রনাথ",
+        "শরৎচন্দ্র",
+        "গল্প"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "bengali-poetry-recitation-kazi-rahnuma",
+      "name": "Bengali Poetry Recitation and Audio Book",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://anchor.fm/s/117d788b4/podcast/rss",
+      "website_url": "https://www.radioguide.fm/podcast/bengali-poetry-recitation-and-audio-book",
+      "focus": [
+        "কবিতা",
+        "আবৃত্তি",
+        "অডিওবুক"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "story-nights-babon",
+      "name": "Story Nights with Babon",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://anchor.fm/s/615808e8/podcast/rss",
+      "website_url": "https://www.radioguide.fm/podcast/story-nights-with-babon-bengali-audio-story-podcast",
+      "focus": [
+        "বাংলা অডিও গল্প"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "apadarther-rojonamcha",
+      "name": "অপদার্থের রোজনামচা",
+      "kind": "rss",
+      "language": "bn",
+      "feed_url": "https://www.spreaker.com/show/6593287/episodes/feed",
+      "website_url": "https://www.radioguide.fm/podcast/apadarthera-rojanamaca-bengali-story-and-poetry",
+      "focus": [
+        "গল্প",
+        "কবিতা"
+      ],
+      "status": "feed-discovered-not-fetched"
+    },
+    {
+      "id": "commons-bengali-audiobooks",
+      "name": "Wikimedia Commons – Bengali Audiobooks",
+      "kind": "commons-category",
+      "language": "bn",
+      "category": "Category:Audiobooks in Bengali",
+      "website_url": "https://commons.wikimedia.org/wiki/Category:Audiobooks_in_Bengali",
+      "focus": [
+        "অডিওবুক",
+        "বাংলা গল্প"
+      ],
+      "status": "existing-importer"
+    },
+    {
+      "id": "commons-spoken-wikisource",
+      "name": "Wikimedia Commons – Spoken Wikisource Bengali",
+      "kind": "commons-category",
+      "language": "bn",
+      "category": "Category:Spoken Wikisource - Bengali",
+      "website_url": "https://commons.wikimedia.org/wiki/Category:Spoken_Wikisource_-_Bengali",
+      "focus": [
+        "সাহিত্য পাঠ",
+        "উইকিসোর্স"
+      ],
+      "status": "category-added-needs-importer"
+    },
+    {
+      "id": "commons-librivox-bengali",
+      "name": "Wikimedia Commons – LibriVox Bengali",
+      "kind": "commons-category",
+      "language": "bn",
+      "category": "Category:LibriVox recordings in Bengali",
+      "website_url": "https://commons.wikimedia.org/wiki/Category:LibriVox_recordings_in_Bengali",
+      "focus": [
+        "পাবলিক ডোমেইন অডিওবুক"
+      ],
+      "status": "category-added-needs-importer"
+    },
+    {
+      "id": "commons-audio-bengali",
+      "name": "Wikimedia Commons – Audio files in Bengali",
+      "kind": "commons-category",
+      "language": "bn",
+      "category": "Category:Audio files in Bengali",
+      "website_url": "https://commons.wikimedia.org/wiki/Category:Audio_files_in_Bengali",
+      "focus": [
+        "বাংলা অডিও",
+        "আবৃত্তি"
+      ],
+      "status": "category-added-needs-importer"
+    }
+  ]
+}
