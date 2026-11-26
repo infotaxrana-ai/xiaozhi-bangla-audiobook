@@ -63,9 +63,12 @@ def main() -> None:
                 "audio_url": url,
                 "source_url": source_page,
                 "license": license_name,
-                "rights_note": "Imported from Wikimedia Commons. Preserve the file-page attribution and comply with the listed license.",
-                "verified": True,
-                "verified_by": "Wikimedia Commons API: original media URL and license metadata",
+                "license_verified": True,
+                "mime_type": info.get("mime", ""),
+                "rights_note": "License metadata was read from Wikimedia Commons. Preserve file-page attribution and comply with the listed license.",
+                "verified": False,
+                "verified_by": None,
+                "verification_notice": "License metadata found; direct streaming and audio decoding still require a separate playback test.",
                 "tags": ["বাংলা সাহিত্য", "Wikimedia Commons"]
             })
         if "continue" not in payload:
@@ -75,7 +78,8 @@ def main() -> None:
     # Deduplicate by stable Commons file URL.
     unique = {item["audio_url"]: item for item in results}
     OUT.write_text(json.dumps(list(unique.values()), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(unique)} licensed audio records to {OUT}")
+    print(f"Wrote {len(unique)} license-screened audio records to {OUT}")
+    print("Imported entries are NOT marked playable until direct streaming is tested and verified=true is set.")
 
 if __name__ == "__main__":
     main()
