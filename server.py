@@ -1,6 +1,6 @@
 """MCP server for a curated Bengali literary audio catalog."""
 from __future__ import annotations
-import json, os
+import json, os, random, threading
 from pathlib import Path
 from typing import Any
 from fastmcp import FastMCP
@@ -10,6 +10,10 @@ CATALOG_PATH = Path(os.getenv("AUDIO_CATALOG", ROOT / "data" / "catalog.json"))
 EXAMPLE_PATH = ROOT / "data" / "catalog.example.json"
 AUTHORS_PATH = ROOT / "data" / "authors.json"
 mcp = FastMCP("Xiaozhi Bangla Audio Library")
+
+# Per-search rotation state: each matching recording is returned once per cycle.
+_ROTATION_LOCK = threading.Lock()
+_ROTATION_QUEUES: dict[tuple[str, str, str], list[str]] = {}
 
 def load_catalog() -> list[dict[str, Any]]:
     """Load imported records plus the hand-curated catalog."""
@@ -77,10 +81,23 @@ def search_bangla_audio(query: str = "", category: str = "", author: str = "", l
         text_ok = all(term in haystack for term in terms)
         author_ok = not author_term or any(author_matches(item, a) for a in matched_authors) or author_term in haystack
         if text_ok and author_ok:
-            found.append(public_item(item))
-        if len(found) >= limit:
-            break
-    return {"count": len(found), "items": found}
+            found.append(item)
+
+    # Keep a shuffled queue per normalized search. Do not repeat an item until
+    # every currently matching item has been returned in this rotation cycle.
+    rotation_key = (query.casefold().strip(), category.casefold().strip(), author_term)
+    by_id = {str(item.get("id") or item.get("audio_url") or index): item
+             for index, item in enumerate(found)}
+    with _ROTATION_LOCK:
+        queue = [item_id for item_id in _ROTATION_QUEUES.get(rotation_key, [])
+                 if item_id in by_id]
+        if not queue and by_id:
+            queue = list(by_id)
+            random.shuffle(queue)
+        selected_ids = queue[:limit]
+        _ROTATION_QUEUES[rotation_key] = queue[len(selected_ids):]
+    selected = [public_item(by_id[item_id]) for item_id in selected_ids]
+    return {"count": len(selected), "items": selected}
 
 @mcp.tool()
 def list_authors(query: str = "") -> dict[str, Any]:
