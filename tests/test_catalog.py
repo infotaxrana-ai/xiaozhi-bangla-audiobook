@@ -76,3 +76,49 @@ def test_author_alias_does_not_match_unrelated_record():
     author = {"id": "rabindranath-tagore", "aliases": ["রবীন্দ্রনাথ", "Tagore"]}
     assert server.author_matches({"title": "অতিথি", "author": "রবীন্দ্রনাথ ঠাকুর"}, author)
     assert not server.author_matches({"title": "পথের পাঁচালী", "author": "বিভূতিভূষণ"}, author)
+
+
+def test_search_rotates_without_repeating_until_cycle_is_exhausted(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "catalog.json").write_text(json.dumps([
+        {"id": "a", "title": "গল্প A", "audio_url": "https://example.org/a.mp3", "verified": True},
+        {"id": "b", "title": "গল্প B", "audio_url": "https://example.org/b.mp3", "verified": True},
+        {"id": "c", "title": "গল্প C", "audio_url": "https://example.org/c.mp3", "verified": True}
+    ], ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(server, "ROOT", tmp_path)
+    monkeypatch.setattr(server, "CATALOG_PATH", data_dir / "catalog.json")
+    monkeypatch.setattr(server, "AUTHORS_PATH", data_dir / "authors.json")
+    monkeypatch.setattr(server.random, "shuffle", lambda values: None)
+    server._ROTATION_QUEUES.clear()
+
+    first = server.search_bangla_audio(limit=2)
+    second = server.search_bangla_audio(limit=2)
+    third = server.search_bangla_audio(limit=2)
+
+    first_ids = [x["id"] for x in first["items"]]
+    second_ids = [x["id"] for x in second["items"]]
+    third_ids = [x["id"] for x in third["items"]]
+    assert first_ids == ["a", "b"]
+    assert second_ids == ["c"]
+    assert set(first_ids).isdisjoint(second_ids)
+    assert third_ids == ["a", "b"]
+
+
+def test_search_rotation_is_independent_for_different_queries(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "catalog.json").write_text(json.dumps([
+        {"id": "a", "title": "গল্প A", "audio_url": "https://example.org/a.mp3", "verified": True},
+        {"id": "b", "title": "কবিতা B", "audio_url": "https://example.org/b.mp3", "verified": True}
+    ], ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(server, "ROOT", tmp_path)
+    monkeypatch.setattr(server, "CATALOG_PATH", data_dir / "catalog.json")
+    monkeypatch.setattr(server, "AUTHORS_PATH", data_dir / "authors.json")
+    monkeypatch.setattr(server.random, "shuffle", lambda values: None)
+    server._ROTATION_QUEUES.clear()
+
+    story = server.search_bangla_audio(query="গল্প", limit=1)
+    poem = server.search_bangla_audio(query="কবিতা", limit=1)
+    assert story["items"][0]["id"] == "a"
+    assert poem["items"][0]["id"] == "b"
