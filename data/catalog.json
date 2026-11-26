@@ -19,7 +19,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "tagore-postmaster",
@@ -41,7 +42,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "tagore-kankal",
@@ -63,7 +65,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "tagore-thakurda",
@@ -85,7 +88,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "tagore-subha",
@@ -107,7 +111,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "tagore-khata",
@@ -129,7 +134,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "rabindranath-tagore"
   },
   {
     "id": "sukumar-sat-patra",
@@ -151,7 +157,8 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "sukumar-ray"
   },
   {
     "id": "madhusudan-samadhi",
@@ -172,6 +179,7 @@
     ],
     "license_verified": true,
     "verified_by": null,
-    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested.",
+    "author_id": "michael-madhusudan-dutt"
   }
 ]
