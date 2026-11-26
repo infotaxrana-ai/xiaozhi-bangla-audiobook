@@ -43,3 +43,22 @@ data/catalog.example.json কপি করে data/catalog.json বানান�
 
 ## ৪. Playback
 Assistant-কে বলতে পারেন: “বাংলা কবিতা আবৃত্তি খুঁজে দাও” বা “হুমায়ূন আহমেদের গল্পের অডিও খুঁজে দাও”। Catalog-এ matching item থাকলে MCP search result দেবে। Playback tool থাকলে সেই URL playback tool-এ পাঠাতে হবে। আপনার server-এ playback tool-এর নাম/argument ভিন্ন হলে agent prompt বা adapter অনুযায়ী mapping লাগবে।
+
+
+## ৫. Wikimedia Commons থেকে আরও অডিও আনুন
+
+প্রথমে dependencies ইনস্টল/আপডেট করুন:
+
+    pip install -r requirements.txt
+
+তারপর চালান:
+
+    python scripts/import_commons.py
+
+স্ক্রিপ্টটি Wikimedia Commons-এর Bengali audiobook category থেকে অডিও ফাইল, direct media URL, author/performer এবং license metadata সংগ্রহ করে `data/commons-import.json` বানাবে। এটি কেবল অনুমোদিত CC BY/CC BY-SA/CC0/Public Domain লাইসেন্স শনাক্ত হওয়া ফাইল নেয়।
+
+এই generated catalog `server.py` স্বয়ংক্রিয়ভাবে load করে। Import শেষে:
+
+    python -c "import server; print(server.get_catalog_status())"
+
+তারপর MCP server restart করুন। কোনো রেকর্ড ব্যবহার বা পুনঃপ্রকাশের আগে source page-এর attribution/license শর্ত দেখে নিন। Wikimedia Commons-এ পাওয়া মানেই সব ফাইল public domain নয়; অনেক recording CC BY-SA লাইসেন্সের।
