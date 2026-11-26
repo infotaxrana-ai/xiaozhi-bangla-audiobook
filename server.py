@@ -13,7 +13,8 @@ mcp = FastMCP("Xiaozhi Bangla Audio Library")
 def load_catalog() -> list[dict[str, Any]]:
     """Load the hand-curated catalog plus generated Commons imports."""
     items: list[dict[str, Any]] = []
-    for path in (CATALOG_PATH, ROOT / "data" / "commons-import.json"):
+    # Load imported records first; the hand-curated catalog takes precedence.
+    for path in (ROOT / "data" / "commons-import.json", CATALOG_PATH):
         if not path.exists():
             continue
         with path.open("r", encoding="utf-8") as handle:
@@ -25,7 +26,7 @@ def load_catalog() -> list[dict[str, Any]]:
         with EXAMPLE_PATH.open("r", encoding="utf-8") as handle:
             data = json.load(handle)
         items.extend(item for item in data if isinstance(item, dict))
-    # Prefer curated entries when the same media URL appears in both files.
+    # The later curated entry replaces an imported record with the same URL.
     unique: dict[str, dict[str, Any]] = {}
     for item in items:
         key = str(item.get("audio_url") or item.get("id") or "")
