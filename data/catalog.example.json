@@ -1,0 +1,18 @@
+[
+  {
+    "id": "example-poetry-001",
+    "title": "Example: Bengali poetry recitation",
+    "author": "Author name",
+    "performer": "Reciter name",
+    "category": "recitation",
+    "language": "bn",
+    "description": "Replace this placeholder with a recording you are authorized to link.",
+    "audio_url": "",
+    "source_url": "",
+    "mime_type": "audio/mpeg",
+    "duration_seconds": null,
+    "rights_note": "Add only recordings whose provider permits direct streaming/linking.",
+    "verified": false,
+    "tags": ["বাংলা কবিতা", "আবৃত্তি"]
+  }
+]
