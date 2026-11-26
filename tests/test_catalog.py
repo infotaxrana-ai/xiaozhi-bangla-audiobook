@@ -45,3 +45,34 @@ def test_curated_entry_overrides_imported_duplicate(tmp_path, monkeypatch):
     monkeypatch.setattr(server, "ROOT", tmp_path)
     monkeypatch.setattr(server, "CATALOG_PATH", curated)
     assert server.load_catalog()[0]["title"] == "Curated"
+
+
+def test_author_directory_counts_and_alias_search(tmp_path, monkeypatch):
+    data_dir = tmp_path / "data"
+    data_dir.mkdir()
+    (data_dir / "authors.json").write_text(json.dumps({
+        "authors": [
+            {"id": "rabindranath-tagore", "name_bn": "রবীন্দ্রনাথ ঠাকুর",
+             "name_en": "Rabindranath Tagore", "aliases": ["রবীন্দ্রনাথ", "Tagore"],
+             "categories": ["গল্প"]}
+        ]
+    }, ensure_ascii=False), encoding="utf-8")
+    (data_dir / "catalog.json").write_text(json.dumps([
+        {"id": "one", "author_id": "rabindranath-tagore", "title": "অতিথি",
+         "author": "রবীন্দ্রনাথ ঠাকুর", "verified": False}
+    ], ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(server, "ROOT", tmp_path)
+    monkeypatch.setattr(server, "CATALOG_PATH", data_dir / "catalog.json")
+    result = server.list_authors("Tagore")
+    assert result["count"] == 1
+    assert result["authors"][0]["catalog_item_count"] == 1
+    search = server.search_bangla_audio(author="রবীন্দ্রনাথ")
+    assert search["count"] == 1
+    assert search["items"][0]["playable"] is False
+    assert "audio_url" not in search["items"][0]
+
+
+def test_author_alias_does_not_match_unrelated_record():
+    author = {"id": "rabindranath-tagore", "aliases": ["রবীন্দ্রনাথ", "Tagore"]}
+    assert server.author_matches({"title": "অতিথি", "author": "রবীন্দ্রনাথ ঠাকুর"}, author)
+    assert not server.author_matches({"title": "পথের পাঁচালী", "author": "বিভূতিভূষণ"}, author)
