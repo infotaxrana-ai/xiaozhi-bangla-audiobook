@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "description": "Canonical Bengali author and poet directory. Entries do not imply available recordings.",
+  "authors": [
+    {
+      "id": "rabindranath-tagore",
+      "name_bn": "রবীন্দ্রনাথ ঠাকুর",
+      "name_en": "Rabindranath Tagore",
+      "aliases": [
+        "রবীন্দ্রনাথ",
+        "রবীন্দ্রনাথ ঠাকুর",
+        "Rabindranath Tagore",
+        "Tagore"
+      ],
+      "period": "1861–1941",
+      "categories": [
+        "কবিতা",
+        "গল্প",
+        "উপন্যাস",
+        "নাটক",
+        "গান"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "kazi-nazrul-islam",
+      "name_bn": "কাজী নজরুল ইসলাম",
+      "name_en": "Kazi Nazrul Islam",
+      "aliases": [
+        "নজরুল",
+        "কাজী নজরুল",
+        "কাজী নজরুল ইসলাম",
+        "Kazi Nazrul Islam",
+        "Nazrul"
+      ],
+      "period": "1899–1976",
+      "categories": [
+        "কবিতা",
+        "গান",
+        "গল্প",
+        "প্রবন্ধ"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "jibanananda-das",
+      "name_bn": "জীবনানন্দ দাশ",
+      "name_en": "Jibanananda Das",
+      "aliases": [
+        "জীবনানন্দ",
+        "জীবনানন্দ দাশ",
+        "Jibanananda Das"
+      ],
+      "period": "1899–1954",
+      "categories": [
+        "কবিতা"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "sukanta-bhattacharya",
+      "name_bn": "সুকান্ত ভট্টাচার্য",
+      "name_en": "Sukanta Bhattacharya",
+      "aliases": [
+        "সুকান্ত",
+        "সুকান্ত ভট্টাচার্য",
+        "Sukanta Bhattacharya"
+      ],
+      "period": "1926–1947",
+      "categories": [
+        "কবিতা"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "jasimuddin",
+      "name_bn": "জসীমউদ্দীন",
+      "name_en": "Jasimuddin",
+      "aliases": [
+        "জসীমউদ্দীন",
+        "জসীম উদ্দীন",
+        "Jasimuddin"
+      ],
+      "period": "1903–1976",
+      "categories": [
+        "কবিতা",
+        "পল্লীগীতি",
+        "কাব্য"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "michael-madhusudan-dutt",
+      "name_bn": "মাইকেল মধুসূদন দত্ত",
+      "name_en": "Michael Madhusudan Dutt",
+      "aliases": [
+        "মধুসূদন",
+        "মাইকেল মধুসূদন দত্ত",
+        "Michael Madhusudan Dutt"
+      ],
+      "period": "1824–1873",
+      "categories": [
+        "কবিতা",
+        "মহাকাব্য",
+        "নাটক"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "humayun-ahmed",
+      "name_bn": "হুমায়ূন আহমেদ",
+      "name_en": "Humayun Ahmed",
+      "aliases": [
+        "হুমায়ূন আহমেদ",
+        "হুমায়ূন আহমেদ",
+        "Humayun Ahmed"
+      ],
+      "period": "1948–2012",
+      "categories": [
+        "উপন্যাস",
+        "গল্প",
+        "নাটক"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "sharat-chandra-chattopadhyay",
+      "name_bn": "শরৎচন্দ্র চট্টোপাধ্যায়",
+      "name_en": "Sarat Chandra Chattopadhyay",
+      "aliases": [
+        "শরৎচন্দ্র",
+        "শরৎচন্দ্র চট্টোপাধ্যায়",
+        "শরৎচন্দ্র চট্টোপাধ্যায়",
+        "Sarat Chandra Chattopadhyay"
+      ],
+      "period": "1876–1938",
+      "categories": [
+        "উপন্যাস",
+        "গল্প"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "bankim-chandra-chattopadhyay",
+      "name_bn": "বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
+      "name_en": "Bankim Chandra Chattopadhyay",
+      "aliases": [
+        "বঙ্কিমচন্দ্র",
+        "বঙ্কিমচন্দ্র চট্টোপাধ্যায়",
+        "Bankim Chandra Chattopadhyay"
+      ],
+      "period": "1838–1894",
+      "categories": [
+        "উপন্যাস",
+        "গল্প",
+        "প্রবন্ধ"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "bibhutibhushan-bandyopadhyay",
+      "name_bn": "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
+      "name_en": "Bibhutibhushan Bandyopadhyay",
+      "aliases": [
+        "বিভূতিভূষণ",
+        "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
+        "বিভূতিভূষণ বন্দ্যোপাধ্যায়",
+        "Bibhutibhushan Bandyopadhyay"
+      ],
+      "period": "1894–1950",
+      "categories": [
+        "উপন্যাস",
+        "গল্প"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    }
+  ]
+}
