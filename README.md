@@ -2,7 +2,7 @@
 
 A lightweight MCP service that lets a Xiaozhi voice assistant discover and play Bangla literary audio from direct, rights-respecting audio URLs.
 
-> Status: foundation scaffold. No third-party audio URLs are bundled until their direct-streaming behavior and reuse permissions are verified.
+> Status: MCP catalog and Commons importer implemented. Direct playback is deliberately disabled for entries until the exact media URL and Xiaozhi playback path have been tested.
 
 ## Features
 
@@ -33,7 +33,7 @@ The pipe script is intentionally not copied here; use the upstream Xiaozhi serve
 
 ## Catalog format
 
-See `data/catalog.example.json`. Each item includes title, author/performer, category, language, audio URL, source URL, rights note and verification status. Run `python scripts/import_commons.py` to fetch currently licensed Bengali audiobook entries from Wikimedia Commons into `data/commons-import.json`; review the generated file before merging records into the main catalog. Only `verified: true` items are exposed as playable results. Commons-imported items include the original media URL and license metadata; retain attribution and comply with the license. Do not add scraped, paywalled, pirated or unauthorized recordings.
+See `data/catalog.example.json`. Each item includes title, author/performer, category, language, audio URL, source URL, rights note and verification status. Run `python scripts/import_commons.py` to fetch currently licensed Bengali audiobook entries from Wikimedia Commons into `data/commons-import.json`; review the generated file before merging records into the main catalog. Only `verified: true` items are exposed as playable results. Commons-imported items include the original media URL and license metadata, but are intentionally marked unverified and are not returned as playable until direct streaming and device playback are tested. See `docs/AUDIO_VERIFICATION.md`. Do not add scraped, paywalled, pirated or unauthorized recordings.
 
 ## Important Xiaozhi playback note
 
@@ -45,6 +45,15 @@ MCP tool integration makes the catalog searchable, but does not guarantee that e
 2. Confirm that linking/streaming is permitted by the provider and applicable rights.
 3. Add the item to `data/catalog.json` and set `verified` to `true` only after testing the URL with an HTTP client/player.
 4. Restart the MCP server.
+
+## Development and tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest -q
+```
+
+GitHub Actions runs the test suite on pushes to `main` and pull requests.
 
 ## License
 
