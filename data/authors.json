@@ -173,6 +173,25 @@
         "গল্প"
       ],
       "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
+    },
+    {
+      "id": "sukumar-ray",
+      "name_bn": "সুকুমার রায়",
+      "name_en": "Sukumar Ray",
+      "aliases": [
+        "সুকুমার রায়",
+        "সুকুমার রায়",
+        "সুকুমার",
+        "Sukumar Ray"
+      ],
+      "period": "1887–1923",
+      "categories": [
+        "ছড়া",
+        "কবিতা",
+        "গল্প",
+        "নাটক"
+      ],
+      "note": "Works and recordings must be matched to source metadata; no recording is assumed available."
     }
   ]
 }
