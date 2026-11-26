@@ -16,7 +16,10 @@
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "tagore-postmaster",
@@ -35,7 +38,10 @@
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "tagore-kankal",
@@ -49,12 +55,15 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:কঙ্কাল_-_রবীন্দ্রনাথ_ঠাকুর.oga",
     "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
     "license": "CC BY-SA 4.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "tagore-thakurda",
@@ -68,12 +77,15 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:ঠাকুরদা_-_রবীন্দ্রনাথ_ঠাকুর.ogg",
     "rights_note": "Individual Commons file page marks CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
     "license": "CC BY-SA 4.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "tagore-subha",
@@ -87,12 +99,15 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:সুভা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
     "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
     "license": "CC BY-SA 4.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "tagore-khata",
@@ -106,12 +121,15 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:খাতা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
     "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
     "license": "CC BY-SA 4.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "গল্প",
       "অডিওবুক",
       "রবীন্দ্রনাথ"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "sukumar-sat-patra",
@@ -125,12 +143,15 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:সৎ_পাত্র_-_সুকুমার_রায়.ogg",
     "rights_note": "Uploader's own recording; CC BY-SA 4.0. Attribute Bodhisattwa and retain share-alike terms.",
     "license": "CC BY-SA 4.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "কবিতা",
       "আবৃত্তি",
       "ছড়া"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   },
   {
     "id": "madhusudan-samadhi",
@@ -144,10 +165,13 @@
     "source_url": "https://commons.wikimedia.org/wiki/File:সমাধি_-_মাইকেল_মধুসূদন_দত্ত.oga",
     "rights_note": "Uploader's own recording; CC BY-SA 3.0. Attribute Tito Dutta and retain share-alike terms.",
     "license": "CC BY-SA 3.0",
-    "verified": true,
+    "verified": false,
     "tags": [
       "কবিতা",
       "আবৃত্তি"
-    ]
+    ],
+    "license_verified": true,
+    "verified_by": null,
+    "verification_notice": "License/source metadata is recorded, but direct stream and device playback have not been tested."
   }
 ]
