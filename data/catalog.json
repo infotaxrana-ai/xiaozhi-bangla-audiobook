@@ -1,1 +1,153 @@
-[]
+[
+  {
+    "id": "tagore-atithi",
+    "title": "অতিথি",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Tisha Mukherjee",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": 3902,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/অতিথি_-_রবীন্দ্রনাথ_ঠাকুর.ogg",
+    "source_url": "https://commons.wikimedia.org/wiki/Category:Audiobooks_in_Bengali",
+    "rights_note": "CC BY-SA 4.0 (as listed by Bangladesh Archive audio entry); verify individual file page attribution before redistribution.",
+    "license": "CC BY-SA 4.0",
+    "verified": false,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "tagore-postmaster",
+    "title": "পোস্টমাস্টার",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Spoken Wikisource Archive",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": 1382,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/পোস্ট্‌মাস্টার_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "source_url": "https://commons.wikimedia.org/wiki/Category:Audiobooks_in_Bengali",
+    "rights_note": "Commons Bengali audiobook category; check individual file page license and attribution.",
+    "license": "Check file page",
+    "verified": false,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "tagore-kankal",
+    "title": "কঙ্কাল",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Paramanu Sarkar",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": 1894,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/কঙ্কাল_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "source_url": "https://commons.wikimedia.org/wiki/File:কঙ্কাল_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
+    "license": "CC BY-SA 4.0",
+    "verified": true,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "tagore-thakurda",
+    "title": "ঠাকুরদা",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Paramanu Sarkar",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": 2218,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/ঠাকুরদা_-_রবীন্দ্রনাথ_ঠাকুর.ogg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:ঠাকুরদা_-_রবীন্দ্রনাথ_ঠাকুর.ogg",
+    "rights_note": "Individual Commons file page marks CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
+    "license": "CC BY-SA 4.0",
+    "verified": true,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "tagore-subha",
+    "title": "সুভা",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Paramanu Sarkar",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": null,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/সুভা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "source_url": "https://commons.wikimedia.org/wiki/File:সুভা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
+    "license": "CC BY-SA 4.0",
+    "verified": true,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "tagore-khata",
+    "title": "খাতা",
+    "author": "রবীন্দ্রনাথ ঠাকুর",
+    "performer": "Paramanu Sarkar",
+    "category": "audiobook",
+    "language": "bn",
+    "duration_seconds": 1308,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/খাতা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "source_url": "https://commons.wikimedia.org/wiki/File:খাতা_-_রবীন্দ্রনাথ_ঠাকুর.oga",
+    "rights_note": "Individual Commons file page identifies CC BY-SA 4.0; attribute uploader and retain share-alike terms.",
+    "license": "CC BY-SA 4.0",
+    "verified": true,
+    "tags": [
+      "গল্প",
+      "অডিওবুক",
+      "রবীন্দ্রনাথ"
+    ]
+  },
+  {
+    "id": "sukumar-sat-patra",
+    "title": "সৎ পাত্র",
+    "author": "সুকুমার রায়",
+    "performer": "Bodhisattwa",
+    "category": "recitation",
+    "language": "bn",
+    "duration_seconds": 76,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/সৎ_পাত্র_-_সুকুমার_রায়.ogg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:সৎ_পাত্র_-_সুকুমার_রায়.ogg",
+    "rights_note": "Uploader's own recording; CC BY-SA 4.0. Attribute Bodhisattwa and retain share-alike terms.",
+    "license": "CC BY-SA 4.0",
+    "verified": true,
+    "tags": [
+      "কবিতা",
+      "আবৃত্তি",
+      "ছড়া"
+    ]
+  },
+  {
+    "id": "madhusudan-samadhi",
+    "title": "সমাধি",
+    "author": "মাইকেল মধুসূদন দত্ত",
+    "performer": "Tito Dutta",
+    "category": "recitation",
+    "language": "bn",
+    "duration_seconds": 33,
+    "audio_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/সমাধি_-_মাইকেল_মধুসূদন_দত্ত.oga",
+    "source_url": "https://commons.wikimedia.org/wiki/File:সমাধি_-_মাইকেল_মধুসূদন_দত্ত.oga",
+    "rights_note": "Uploader's own recording; CC BY-SA 3.0. Attribute Tito Dutta and retain share-alike terms.",
+    "license": "CC BY-SA 3.0",
+    "verified": true,
+    "tags": [
+      "কবিতা",
+      "আবৃত্তি"
+    ]
+  }
+]
