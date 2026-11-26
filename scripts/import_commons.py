@@ -15,7 +15,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "commons-import.json"
 API = "https://commons.wikimedia.org/w/api.php"
-CATEGORY = "Category:Audiobooks in Bengali"
+CATEGORIES = ["Category:Audiobooks in Bengali", "Category:Spoken Wikisource - Bengali", "Category:LibriVox recordings in Bengali", "Category:Audio files in Bengali"]
 HEADERS = {"User-Agent": "XiaozhiBanglaAudioLibrary/0.1 (catalog importer; contact repo maintainer)"}
 ALLOWED = {"CC BY 4.0", "CC BY-SA 4.0", "CC BY 3.0", "CC BY-SA 3.0",
            "CC0", "Public domain"}
@@ -26,11 +26,12 @@ def clean(value: str) -> str:
 def main() -> None:
     session = requests.Session()
     session.headers.update(HEADERS)
-    params = {"action":"query","generator":"categorymembers","gcmtitle":CATEGORY,
-              "gcmtype":"file","gcmlimit":"max","prop":"imageinfo",
-              "iiprop":"url|extmetadata","iiurlwidth":"0","format":"json"}
     results = []
-    while True:
+    for category in CATEGORIES:
+      params = {"action":"query","generator":"categorymembers","gcmtitle":category,
+                "gcmtype":"file","gcmlimit":"max","prop":"imageinfo",
+                "iiprop":"url|extmetadata","iiurlwidth":"0","format":"json"}
+      while True:
         response = session.get(API, params=params, timeout=40)
         response.raise_for_status()
         payload = response.json()
