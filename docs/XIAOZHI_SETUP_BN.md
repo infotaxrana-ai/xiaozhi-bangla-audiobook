@@ -1,3 +1,17 @@
+## ESP32 Static Feed (Sunday Suspense-এর মতো)
+
+এই repository `data/audiobook_device.json` তৈরি করে। JSON shape বিদ্যমান Sunday Suspense device feed-এর মতো: `target_bitrate_kbps`, `episodes`, `title`, `category`, `audio_url`।
+
+Raw feed URL:
+
+`https://raw.githubusercontent.com/infotaxrana-ai/xiaozhi-bangla-audiobook/main/data/audiobook_device.json`
+
+এটি feed-based integration; এই পথে নতুন MCP Bridge লাগে না। GitHub Actions configured public RSS feeds থেকে direct HTTPS audio enclosure নিয়ে feed refresh করে। OGG/OGA বাদ থাকে; MP3/AAC/MP4/M4A candidate রাখা হয়। `target_bitrate_kbps: 48` target মাত্র—source bitrate 48 kbps প্রমাণ করে না। `bitrate_verified` এবং `playback_verified` false থাকবে যতক্ষণ না তোমার ESP32 board-এ stream পরীক্ষা করা হয়।
+
+গুরুত্বপূর্ণ: installed firmware-এ audiobook feed URL নেওয়ার slot/feature আগে থেকেই থাকতে হবে। এই repository থেকে installed firmware বদলানো বা flash করা হয় না।
+
+---
+
 # Xiaozhi-তে সংযোগ
 
 ## এই repository কী করে
