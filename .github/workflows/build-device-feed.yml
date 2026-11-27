@@ -1,0 +1,65 @@
+name: Build Bangla Audiobook Device Feed
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/catalog.json"
+      - "data/sources.json"
+      - "scripts/import_podcasts.py"
+      - "scripts/build_device_feed.py"
+      - "tests/test_device_feed.py"
+      - ".github/workflows/build-device-feed.yml"
+  schedule:
+    - cron: "40 2 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Refresh public podcast RSS enclosures
+        run: python scripts/import_podcasts.py
+      - name: Build ESP32-facing audiobook feed
+        run: python scripts/build_device_feed.py
+      - name: Run catalog and device-feed tests
+        run: PYTHONPATH=. pytest -q
+      - name: Validate device feed
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/audiobook_device.json").read_text(encoding="utf-8"))
+          assert data["mode"] == "audiobook"
+          assert data["schema_version"] == 1
+          assert data["total"] == len(data["episodes"])
+          assert data["target_bitrate_kbps"] == 48
+          for episode in data["episodes"]:
+              assert episode["audio_url"].startswith("https://")
+              assert episode["title"]
+          print("DEVICE FEED SCHEMA PASS")
+          print("EPISODES:", data["total"])
+          print("BITRATE VERIFIED:", data["bitrate_verified"])
+          print("PLAYBACK VERIFIED:", data["playback_verified"])
+          PY
+      - name: Commit refreshed feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+users.noreply.github.com"
+          git add data/podcast-import.json data/audiobook_device.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh Bangla audiobook device feed"
+            git push
+          else
+            echo "No device feed changes."
+          fi
