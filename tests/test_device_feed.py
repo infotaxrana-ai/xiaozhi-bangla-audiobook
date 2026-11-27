@@ -13,7 +13,7 @@ def test_rss_mp3_is_exported_in_sunday_suspense_device_shape(tmp_path):
     write_json(data / "podcast-import.json", [{
         "id": "pod-1", "title": "হুমায়ূন আহমেদের গল্প",
         "author": "হুমায়ূন আহমেদ", "category": "podcast",
-        "source_id": "golpo-kothar-asor", "mime_type": "audio/mpeg",
+        "source_id": "golpo-kothar-asor", "tags": ["অডিওবুক"], "mime_type": "audio/mpeg",
         "audio_url": "https://cdn.example.org/story.mp3", "verified": False,
     }])
     result = build(data, data / "audiobook_device.json")
