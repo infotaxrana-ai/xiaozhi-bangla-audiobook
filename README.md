@@ -2,9 +2,14 @@
 
 A lightweight MCP service that lets a Xiaozhi voice assistant discover and play Bangla literary audio from direct, rights-respecting audio URLs.
 
-> Status: MCP catalog and Commons importer implemented. Direct playback is deliberately disabled for entries until the exact media URL and Xiaozhi playback path have been tested.
+> Status: Author catalog and RSS/Commons importers are implemented. An ESP32-facing static JSON feed is generated in the same compact shape as the existing Sunday Suspense device feed. Source bitrate and actual board playback remain unverified until tested on the device.
 
 ## Features
+
+- Static device feed: `data/audiobook_device.json`, matching the existing Xiaozhi podcast feed fields (`target_bitrate_kbps`, `episodes`, `title`, `category`, `audio_url`).
+- Weekly GitHub Actions refresh from configured public RSS feeds.
+- Device feed includes direct HTTPS MP3/AAC/MP4/M4A links only; untested OGG/OGA candidates are excluded.
+- 48 kbps is a device target only; the feed does not claim that source streams are actually 48 kbps.
 
 - Search Bengali audiobook, story, podcast and poetry-recitation entries.
 - Return direct audio URLs only for catalog entries marked `verified`.
@@ -34,6 +39,12 @@ The pipe script is intentionally not copied here; use the upstream Xiaozhi serve
 ## Catalog format
 
 See `data/catalog.example.json`. Each item includes title, author/performer, category, language, audio URL, source URL, rights note and verification status. Run `python scripts/import_commons.py` to fetch license-screened Bengali audio from four Wikimedia Commons collections into `data/commons-import.json`. Run `python scripts/import_podcasts.py` to import episode enclosure URLs from the six configured public RSS feeds into `data/podcast-import.json`; review the generated file before merging records into the main catalog. Only `verified: true` items are exposed as playable results. Commons- and podcast-imported items include original media URLs and source metadata, but are intentionally marked unverified and are not returned as playable until direct streaming and device playback are tested. See `docs/AUDIO_VERIFICATION.md`. Do not add scraped, paywalled, pirated or unauthorized recordings.
+
+## ESP32 static feed
+
+The device feed is published at [`data/audiobook_device.json`](data/audiobook_device.json). Its structure mirrors [`xiaozhi-bangla-podcast/data/podcast_device.json`](https://github.com/infotaxrana-ai/xiaozhi-bangla-podcast/blob/main/data/podcast_device.json). Raw URL: `https://raw.githubusercontent.com/infotaxrana-ai/xiaozhi-bangla-audiobook/main/data/audiobook_device.json`.
+
+RSS enclosure URLs are linked directly; audio is not rehosted. `target_bitrate_kbps: 48` is a target, not a measured source bitrate. `bitrate_verified` and `playback_verified` stay false until the actual stream and ESP32 playback are tested. The installed board firmware must already have an audiobook/feed slot configured to read this URL; this repository does not modify or flash installed firmware.
 
 ## Important Xiaozhi playback note
 
